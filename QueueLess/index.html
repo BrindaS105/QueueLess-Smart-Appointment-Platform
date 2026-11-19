@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueLess - Smart Appointment Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>QueueLess</h1>
+        <p>Book smarter. Wait less.</p>
+    </div>
+    <span>Appointment Management Prototype</span>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h2>Manage your appointments easily</h2>
+        <p>Book a service, receive a token and track your appointment.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <strong id="totalBookings">0</strong>
+            <span>Total Bookings</span>
+        </div>
+        <div class="stat">
+            <strong id="waitingCount">0</strong>
+            <span>Waiting</span>
+        </div>
+        <div class="stat">
+            <strong id="servingCount">0</strong>
+            <span>In Service</span>
+        </div>
+        <div class="stat">
+            <strong id="completedCount">0</strong>
+            <span>Completed</span>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Book an Appointment</h2>
+        <p class="muted">Enter your details to create a sample booking.</p>
+
+        <form id="bookingForm">
+
+            <label for="customerName">Customer Name</label>
+            <input id="customerName" type="text"
+                placeholder="Enter your name" maxlength="60" required>
+
+            <label for="service">Select Service</label>
+            <select id="service" required>
+                <option value="">Choose a service</option>
+                <option value="General Consultation">General Consultation</option>
+                <option value="Document Service">Document Service</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Personal Service">Personal Service</option>
+            </select>
+
+            <label for="appointmentDate">Appointment Date</label>
+            <input id="appointmentDate" type="date" required>
+
+            <label for="appointmentTime">Appointment Time</label>
+            <select id="appointmentTime" required>
+                <option value="">Choose a time</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="16:00">04:00 PM</option>
+            </select>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Appointment Dashboard</h2>
+
+        <div class="filters">
+            <input id="searchInput" type="search"
+                placeholder="Search customer or token">
+
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Waiting">Waiting</option>
+                <option value="In Service">In Service</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <div id="bookingList"></div>
+
+        <p id="emptyMessage">No appointments available.</p>
+    </section>
+
+    <p class="notice">
+        Prototype notice: Queue positions and bookings are simulated
+        in your browser. This is not a live appointment service.
+    </p>
+
+</main>
+
+<footer>
+    <p>QueueLess - Appointment Management Prototype</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
